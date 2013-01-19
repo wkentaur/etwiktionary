@@ -8,10 +8,11 @@
 
 <script id="home-tpl" type="text/x-handlebars-template">
     <div class='header'><h1>{{title}}</h1></div>
-    <div class='search-bar'><input class='search-key' id='search-key' type="search" value="{{word}}" autofocus="autofocus"/></div>
+    <div class='search-bar'><input class='search-key' id='search-key' type="search" value="{{word}}" /></div>
     <div class="scroll"><ul class='word-list'></ul></div>
     <div id="desc" class='scroll intro'>
 		{{{intro}}}
+    <footer><small>{{copyright}} <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></small></footer>
     </div>
 </script>
 <script id="word-li-tpl" type="text/x-handlebars-template">
@@ -33,7 +34,7 @@
 <script src="js/RemoteApis.js"></script>
 <script src="js/HomeView.js"></script>
 <script src="js/WordView.js"></script>
-<script src="js/main.js"></script>
+<script src="js/app.js"></script>
 <script src="phonegap.js"></script>
 
 

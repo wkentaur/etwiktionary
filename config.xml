@@ -2,8 +2,8 @@
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "org.wkentaur.etwiktionary"
-        versionCode = "1"
-        version     = "0.1.0">
+        versionCode = "2"
+        version     = "0.2.0">
  
     <name>
 		English-Estonian Wiktionary
@@ -17,13 +17,13 @@
 		English-Estonian dictionary based on Wiktionary data. Also the data from EKI dictionary is used.	
     </description>
  
-     <description xml:lang="et" dir="ltr">
+    <description xml:lang="et" dir="ltr">
         Vikisõnastikul põhinev inglise-eesti sõnastik. Kasutatud on ka EKI inglise-eesti sõnastikku. 
     </description>
 
 	<icon src="icon.png" width="100" height="100"/>
-    
-    <author href="" email="raul.kern@eesti.ee">
+
+    <author email="raul.kern@eesti.ee">
         Raul Kern
     </author>
  

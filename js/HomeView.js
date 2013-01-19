@@ -1,12 +1,31 @@
 var HomeView = function(store, sWord) {
+	var lang = 'en';
  
     this.initialize = function() {
         // Define a div wrapper for the view. The div wrapper is used to attach events.
         this.el = $('<div/>');
         this.el.on('keyup', '.search-key', this.findByName);
+		lang = this.navigatorLang();
+		if (lang != "et") 
+			lang = "en";    //default lang     
+		document.addEventListener("deviceready", this.checkConnection, false);			   
 		if (sWord)
 			$(document).ready(this.findByName());
 	};
+
+    this.checkConnection = function() {
+        var networkState = navigator.network.connection.type;
+
+		if (networkState == Connection.NONE){
+			var localizedStrings={
+				connError:{
+				'en':'Try again later, when you are connected to internet.',
+				'et':'Proovi hiljem uuesti, kui oled internetti ühendatud.'
+				}
+			}			
+			navigator.notification.alert(localizedStrings["connError"][lang]);
+		};
+    };
 
 	this.navigatorLang = function() {
 		var lang = navigator.language;
@@ -31,17 +50,19 @@ var HomeView = function(store, sWord) {
 				'et':'inglise-eesti sõnastik'
 			},
 			intro:{
-				'en':'English-Estonian dictionary based on <a href="http://et.wiktionary.org">Wiktionary</a> data. Also the data from <a href="http://eki.ee">EKI</a> dictionary is used.',
+				'en':'<p>English-Estonian dictionary based on <a href="http://et.wiktionary.org">Wiktionary</a> data. Also the data from <a href="http://eki.ee">EKI</a> dictionary is used.</p>',
 				'et':'<a href="http://et.wiktionary.org">Vikisõnastikul</a> põhinev inglise-eesti sõnastik. Kasutatud on ka <a href="http://eki.ee">EKI</a> inglise-eesti sõnastikku. <p><a href="http://et.wiktionary.org">Vikisõnastikku saad ise täiendada.</a></p>'
+			},
+			content:{
+				'en':'Content:',
+				'et':'Sisu:'
 			}
 		}		
 		var output = new Array();
-		var lang = this.navigatorLang();
-		if (lang != "et") 
-			lang = "en";    //default lang
 		output["word"] = sWord;
 		output["title"] = localizedStrings["title"][lang];
 		output["intro"] = localizedStrings["intro"][lang];
+		output["copyright"] = localizedStrings["content"][lang];
 		this.el.html(HomeView.template(output));
 		return this;
 	};

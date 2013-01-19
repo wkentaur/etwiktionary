@@ -3,6 +3,7 @@ var RemoteApis = function(successCallback, errorCallback) {
 
     this.findByName = function(searchKey, callback) {
 		if (searchKey.length > 0) {
+
 				$.ajax({
 					url: "http://toolserver.org/~kentaur/etwikt/api/api.php",
 					type: "GET",
