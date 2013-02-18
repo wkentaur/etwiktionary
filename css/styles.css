@@ -93,7 +93,7 @@ li.word-list {
     display: -webkit-box;
     display: -moz-box;
     display: box;
-    width: 97%;
+    width: 94%;
 }
 
 
@@ -102,7 +102,7 @@ li.word-list>a {
     display: block;
     padding: 5px;
     text-decoration: none;
-    width: 100%;
+    width: 94%;
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
     box-flex: 1;
@@ -201,4 +201,8 @@ h4 {
     bottom: 0px;
     left: 0px;
     right: 0px;
+}
+
+.toimeta {
+    display: none;
 }

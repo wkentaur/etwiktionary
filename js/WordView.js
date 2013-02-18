@@ -4,6 +4,7 @@ var WordView = function(store, word) {
         this.el = $('<div/>');
         this.el.on('keyup', '.search-key', this.findByName);
         $('base').attr('href', 'http://et.m.wiktionary.org/');
+        $('#word-list').hide();
     };
     
 this.render = function() {

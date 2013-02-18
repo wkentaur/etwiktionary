@@ -8,7 +8,7 @@ var HomeView = function(store, sWord) {
 		lang = this.navigatorLang();
 		if (lang != "et") 
 			lang = "en";    //default lang     
-		document.addEventListener("deviceready", this.checkConnection, false);			   
+		document.addEventListener("deviceready", this.checkConnection, false);	 
 		if (sWord)
 			$(document).ready(this.findByName());
 	};
