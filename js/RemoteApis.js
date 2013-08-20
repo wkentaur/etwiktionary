@@ -1,11 +1,10 @@
-
 var RemoteApis = function(successCallback, errorCallback) {
 
     this.findByName = function(searchKey, callback) {
 		if (searchKey.length > 0) {
 
 				$.ajax({
-					url: "http://toolserver.org/~kentaur/etwikt/api/api.php",
+					url: "http://tools.wmflabs.org/etwikt/api/api.php",
 					type: "GET",
 					dataType: "jsonp",
 					data: {
