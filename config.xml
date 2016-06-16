@@ -3,8 +3,8 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         xmlns:android   = "http://schemas.android.com/apk/res/android"
         id          = "org.wkentaur.etwiktionary"
-        versionCode = "6"
-        version     = "0.6">
+        versionCode = "7"
+        version     = "0.7">
  
     <name>
 		English-Estonian miktionary
@@ -24,7 +24,7 @@
 
     <icon src="icon.png" width="100" height="100"/>
     
-    <preference name="phonegap-version" value="3.7.0" />
+    <preference name="phonegap-version" value="cli-5.2.0" />
 
     <author email="raul.kern@eesti.ee">
         Raul Kern
