@@ -31,6 +31,7 @@ var RemoteApis = function(successCallback, errorCallback) {
 
     this.getDesc = function(request, callback) {
 		word = new Array();
+		wikiPage = request.replace(/%20/g,'_');
 		
 		$.ajax({
 			url: "http://et.wiktionary.org/w/api.php",
@@ -39,7 +40,7 @@ var RemoteApis = function(successCallback, errorCallback) {
 				'action': "mobileview",
 				'sections': "all",
 				'format': "json",
-				'page': request
+				'page': wikiPage
 			},
 			success: function(data) {
 				var output = "";
@@ -58,7 +59,7 @@ var RemoteApis = function(successCallback, errorCallback) {
 					}
 				}
 				
-				word["title"] = request;
+				word["title"] = decodeURIComponent(request);
 				word["desc"] = output;
 				callback(word);
 			},
